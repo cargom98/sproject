@@ -7,7 +7,7 @@ remote_file '/usr/share/nginx/html/latest.zip' do
   source 'http://wordpress.org/latest.zip'
   owner 'root'
   group 'root'
-  mode '755'
+  mode '0755'
 end
 
 execute 'deploying wordpress' do

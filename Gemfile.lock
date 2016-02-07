@@ -276,6 +276,7 @@ DEPENDENCIES
   guard-foodcritic (>= 1.0)
   guard-kitchen
   kitchen-vagrant
+  rake
   test-kitchen
 
 BUNDLED WITH

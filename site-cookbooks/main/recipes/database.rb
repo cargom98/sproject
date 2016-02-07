@@ -5,11 +5,10 @@ mysql_service 'default' do
   action [:create, :start]
 end
 
-socket = "/var/run/mysql-default/mysqld.sock"
+socket = '/var/run/mysql-default/mysqld.sock'
 
 link '/var/run/mysqld/mysqld.sock' do
       to socket
-      not_if 'test -f /var/run/mysqld/mysqld.sock'
 end
 
 mysql2_chef_gem 'default' do

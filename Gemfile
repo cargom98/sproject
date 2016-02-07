@@ -10,4 +10,5 @@ group :development do
   gem 'guard-foodcritic', '>= 1.0'
   gem 'foodcritic', '>= 3.0'
   gem 'chefspec', '>= 3.1'
+  gem 'rake'
 end  
