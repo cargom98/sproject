@@ -1,0 +1,5 @@
+default['main']['database']['dbname'] = 'wordpress'
+default['main']['database']['rootpw'] = 'changeme'
+default['main']['database']['host'] = 'localhost'
+default['main']['database']['username'] = 'wpuser'
+default['main']['database']['password'] = 'wp123'

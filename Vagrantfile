@@ -16,7 +16,7 @@ Vagrant.configure(2) do |config|
     # https://docs.vagrantup.com/v2/virtualbox/configuration.html
 
     # Name used in Oracle VM VirtualBox Manager GUI
-    vb.name = "berkshelf-ubuntu-kitchen"
+    vb.name = "www-wp"
 
     # Customize the amount of memory on the VM (in MB):
     vb.memory = "2048"
