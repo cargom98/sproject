@@ -23,15 +23,21 @@ task test: [:lint, :integration, :unit]
 # Foodcritic
 desc 'Run foodcritic lint checks'
 task :foodcritic do
-  if Gem::Version.new('1.9.2') <= Gem::Version.new(RUBY_VERSION.dup)
-    puts 'Running Foodcritic tests...'
-    FoodCritic::Rake::LintTask.new do |t|
-      t.options = { fail_tags: ['any'] }
-      puts 'done.'
-    end
-  else
-    puts "WARN: foodcritic run is skipped as Ruby #{RUBY_VERSION} is < 1.9.2."
-  end
+  sh 'foodcritic -B site-cookbooks'
+  # if Gem::Version.new('1.9.2') <= Gem::Version.new(RUBY_VERSION.dup)
+  #   puts 'Running Foodcritic tests...'
+  #   FoodCritic::Rake::LintTask.new do |t|
+  #     @files = 'site-cookbooks/'
+  #     t.options = {
+  #       cookbook_paths: 'site-cookbooks',
+  #       fail_tags: ['any'],
+  #       context: 'false'
+  #     }
+  #     puts 'done.'
+  #   end
+  # else
+  #   puts "WARN: foodcritic run is skipped as Ruby #{RUBY_VERSION} is < 1.9.2."
+  # end
 end
 
 # Rubocop
