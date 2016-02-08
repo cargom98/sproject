@@ -35,7 +35,7 @@ describe 'main::nginx' do
     expect(chef_run).to create_template('/etc/nginx/hhvm.conf').with(
       user: 'root',
       group: 'root',
-      mode: '0644',
+      mode: '0664',
     )
 
     expect(chef_run).to_not create_template('/etc/nginx/hhvm.conf').with(
@@ -53,8 +53,8 @@ describe 'main::nginx' do
   
   it 'creates a default site file with attributes, content' do
     expect(chef_run).to create_template('/etc/nginx/sites-available/default').with(
-      user: 'root',
-      group: 'root',
+      user: 'www-data',
+      group: 'www-data',
       mode: '0644',
     )
 
