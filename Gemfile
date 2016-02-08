@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'berkshelf'
 
-group :development do  
+group :development do
   gem 'test-kitchen'
   gem 'kitchen-vagrant'
   gem 'guard'
@@ -11,4 +11,6 @@ group :development do
   gem 'foodcritic', '>= 3.0'
   gem 'chefspec', '>= 3.1'
   gem 'rake'
-end  
+  gem 'rake-foodcritic'
+  gem 'rubocop', require: false
+end

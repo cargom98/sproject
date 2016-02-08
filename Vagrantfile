@@ -5,24 +5,24 @@ Vagrant.configure(2) do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
   #
-  config.vm.box = "ubuntu/trusty64"
-  config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.box = 'ubuntu/trusty64'
+  config.vm.network 'forwarded_port', guest: 80, host: 8080
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   #
-  config.vm.provider "virtualbox" do |vb|
+  config.vm.provider 'virtualbox' do |vb|
     # For a complete reference, please see the online documentation at
     # https://docs.vagrantup.com/v2/virtualbox/configuration.html
 
     # Name used in Oracle VM VirtualBox Manager GUI
-    vb.name = "www-wp"
+    vb.name = 'www-wp'
 
     # Customize the amount of memory on the VM (in MB):
-    vb.memory = "2048"
+    vb.memory = '2048'
 
     # Customize the amount of video memory on the VM (in MB):
-    vb.customize ["modifyvm", :id, "--vram", "128"]
+    vb.customize ['modifyvm', :id, '--vram', '128']
   end
 
   # Install the latest version of Chef.
@@ -37,11 +37,11 @@ Vagrant.configure(2) do |config|
   #
   config.vm.provision :chef_zero do |chef|
     # Specify the local paths where Chef data is stored
-    chef.cookbooks_path = [ 'cookbooks', 'site-cookbooks' ]
-    chef.data_bags_path = "data_bags"
-    chef.roles_path = "roles"
+    chef.cookbooks_path = ['cookbooks', 'site-cookbooks']
+    chef.data_bags_path = 'data_bags'
+    chef.roles_path = 'roles'
 
     # Add a recipe
-    chef.add_recipe "main::default"
+    chef.add_recipe 'main::default'
   end
 end

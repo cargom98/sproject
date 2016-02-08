@@ -11,7 +11,9 @@ remote_file '/usr/share/nginx/html/latest.zip' do
 end
 
 execute 'deploying wordpress' do
-  command 'unzip /usr/share/nginx/html/latest.zip -d /usr/share/nginx/html;mv /usr/share/nginx/html/wordpress/* /usr/share/nginx/html/;rmdir /usr/share/nginx/html/wordpress'
+  command 'unzip /usr/share/nginx/html/latest.zip -d /usr/share/nginx/html;
+  mv /usr/share/nginx/html/wordpress/* /usr/share/nginx/html/;
+  rmdir /usr/share/nginx/html/wordpress'
   creates '/usr/share/nginx/html/wp-config-sample.php'
 end
 
@@ -20,11 +22,10 @@ template '/usr/share/nginx/html/wp-config.php' do
   mode '0440'
   owner 'www-data'
   group 'www-data'
-  variables({
-     :name_database   => node['main']['database']['dbname'],
-     :user_database   => node['main']['database']['username'],
-     :passwd_database => node['main']['database']['password']
-  })
+  variables(
+    name_database: node['main']['database']['dbname'],
+    user_database: node['main']['database']['username'],
+    passwd_database: node['main']['database']['password'])
 end
 
 execute 'change user ownership' do

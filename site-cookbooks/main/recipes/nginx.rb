@@ -5,7 +5,7 @@ template '/etc/nginx/sites-available/default' do
   mode '0644'
   owner 'www-data'
   group 'www-data'
-  notifies :restart, 'service[nginx]', :immediately  
+  notifies :restart, 'service[nginx]', :immediately
 end
 
 template '/etc/nginx/hhvm.conf' do
@@ -13,5 +13,5 @@ template '/etc/nginx/hhvm.conf' do
   mode '0664'
   owner 'root'
   group 'root'
-  notifies :restart, 'service[nginx]', :immediately  
+  notifies :restart, 'service[nginx]', :immediately
 end

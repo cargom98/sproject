@@ -1,6 +1,6 @@
 include_recipe 'hhvm'
 
-service "hhvm" do
+service 'hhvm' do
   action :start
 end
 
@@ -9,5 +9,5 @@ template '/etc/hhvm/server.ini' do
   mode '0644'
   owner 'root'
   group 'root'
-  notifies :restart, 'service[hhvm]', :immediately  
+  notifies :restart, 'service[hhvm]', :immediately
 end
